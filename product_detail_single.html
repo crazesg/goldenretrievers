@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品詳情 | 金犬屋</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-detail-container-flex {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .product-detail-img {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 1rem;
+            margin-bottom: 0;
+            box-shadow: 0 4px 18px rgba(230,177,106,0.10);
+            object-fit: cover;
+        }
+        .product-detail-info {
+            flex: 1;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .product-detail-title {
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: #3D2C1E;
+            margin-bottom: 1rem;
+        }
+        .product-detail-short {
+            font-size: 1.15rem;
+            color: #B79C85;
+            margin-bottom: 1.2rem;
+        }
+        .product-detail-long {
+            font-size: 1.08rem;
+            color: #5a4633;
+            margin-bottom: 2.2rem;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #E6B16A;
+            color: #fff;
+            padding: 0.8rem 2.2rem;
+            border-radius: 0.7rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+            border: none;
+        }
+        .back-btn:hover { background: #3D2C1E; }
+        @media (max-width: 700px) {
+            .product-detail-container-flex {
+                flex-direction: column;
+                align-items: center;
+                padding: 1.2rem 0.5rem;
+            }
+            .product-detail-img {
+                width: 100%;
+                max-width: 350px;
+                margin-bottom: 2rem;
+            }
+            .product-detail-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 0.7rem; text-decoration: none;">
+                <img src="logo2.png" alt="金犬屋 Logo" class="logo-img" style="height: 48px; width: 48px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(32,31,45,0.08); background: #fff;" />
+                <span style="font-size: 1.45rem; font-weight: bold; color: #201f2d; letter-spacing: 0.12em; font-family: 'Noto Sans TC', 'Nunito Sans', sans-serif;">金犬屋</span>
+            </a>
+        </div>
+    </nav>
+    <div class="product-detail-container-flex" id="productDetail">
+        <div>載入中...</div>
+    </div>
+    <!-- 按鈕區塊：水平排列，樣式一致 -->
+    <div style="display:flex;justify-content:center;gap:1.2rem;margin-top:2.5rem;">
+        <a href="index.html" class="back-btn">返回首頁</a>
+        <button class="back-btn" style="cursor:pointer;" onclick="history.back()">回到上一頁</button>
+    </div>
+    <script>
+    // 商品資料與渲染
+    const products = [
+        {
+            name: 'Pagani Huayra',
+            shortDesc: '項目:RGB',
+            longDesc: '支援多語言語音指令，整合多種智慧家居設備，讓生活更便利。',
+            image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 3,000',
+            brand: 'Pagani',
+            category: '汽車'
+        },
+        {
+            name: '造型頭盔',
+            shortDesc: '安全又時尚',
+            longDesc: '高強度材質，結合潮流設計，保護你的同時展現個性。',
+            image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,200',
+            brand: 'Doggy',
+            category: '配件'
+        },
+        {
+            name: '多功能手環',
+            shortDesc: '健康監測，訊息提醒',
+            longDesc: '支援心率、步數、睡眠監測，來電與訊息提醒，生活好幫手。',
+            image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,500',
+            brand: 'SmartDog',
+            category: '穿戴'
+        },
+        {
+            name: '智能餵食器',
+            shortDesc: '遠端控制，定時餵食',
+            longDesc: '可透過手機 App 遠端設定餵食時間與份量，支援語音提醒。',
+            image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,800',
+            brand: 'PetFeeder',
+            category: '家電'
+        },
+        {
+            name: '寵物智能項圈',
+            shortDesc: 'GPS 定位，健康監控',
+            longDesc: '即時追蹤寵物位置，記錄活動與健康數據，防走失必備。',
+            image: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,200',
+            brand: 'SafePet',
+            category: '穿戴'
+        },
+        {
+            name: '自動逗貓機',
+            shortDesc: '智能互動，遠端操控',
+            longDesc: '多種模式切換，讓寵物在家也能快樂玩耍，支援遠端遙控。',
+            image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,500',
+            brand: 'CatFun',
+            category: '玩具'
+        },
+        {
+            name: '智能飲水機',
+            shortDesc: '自動循環，過濾淨水',
+            longDesc: '多重過濾系統，保持水質新鮮，鼓勵寵物多喝水。',
+            image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,000',
+            brand: 'WaterPro',
+            category: '家電'
+        },
+        {
+            name: '寵物推車',
+            shortDesc: '輕巧折疊，外出方便',
+            longDesc: '高承重設計，適合各種體型寵物，外出旅遊好幫手。',
+            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 3,600',
+            brand: 'GoPet',
+            category: '戶外'
+        },
+        {
+            name: '智能寵物門',
+            shortDesc: '自動感應，安全防護',
+            longDesc: '支援晶片辨識，寵物靠近自動開啟，防止陌生動物進入。',
+            image: 'https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,800',
+            brand: 'SmartHome',
+            category: '家電'
+        },
+        {
+            name: '寵物冷暖墊',
+            shortDesc: '四季適用，恆溫舒適',
+            longDesc: '自動調節溫度，讓寵物冬暖夏涼，安全省電。',
+            image: 'https://images.unsplash.com/photo-1518715308788-3005759c61d4?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,000',
+            brand: 'ComfyPet',
+            category: '家居'
+        },
+        {
+            name: '智能寵物攝影機',
+            shortDesc: '遠端監控，雙向語音',
+            longDesc: '1080P 高畫質，支援夜視與雙向語音，隨時掌握寵物動態。',
+            image: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,900',
+            brand: 'PetCam',
+            category: '家電'
+        },
+        {
+            name: '寵物自動洗澡機',
+            shortDesc: '全自動洗淨，省時省力',
+            longDesc: '多段水溫調節，智能烘乾，讓洗澡變得輕鬆又安全。',
+            image: 'https://images.unsplash.com/photo-1518715308788-3005759c61d4?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 5,500',
+            brand: 'CleanPet',
+            category: '家電'
+        }
+    ];
+    function getQueryIdx() {
+        const url = new URL(window.location.href);
+        const idx = parseInt(url.searchParams.get('idx'), 10);
+        if (isNaN(idx) || idx < 0 || idx >= products.length) return 0;
+        return idx;
+    }
+    function renderDetail(idx) {
+        const p = products[idx];
+        const box = document.getElementById('productDetail');
+        if (!p) {
+            box.innerHTML = '<div style="color:#d32f2f;font-size:1.2rem;">查無此商品</div>';
+            return;
+        }
+        box.innerHTML = `
+            <img src="${p.image}" class="product-detail-img" alt="${p.name}">
+            <div class="product-detail-info">
+                <div class="product-detail-title">${p.name}</div>
+                <div class="product-detail-short">${p.shortDesc}</div>
+                <div class="product-detail-long">${p.longDesc}</div>
+                <div style="margin:2rem 0 0 0;max-width:350px;">
+                    <div><b>價格：</b>${p.price}</div>
+                    <div><b>品牌：</b>${p.brand}</div>
+                    <div><b>分類：</b>${p.category}</div>
+                </div>
+            </div>
+        `;
+    }
+    renderDetail(getQueryIdx());
+    </script>
+</body>
+</html>

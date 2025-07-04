@@ -1,2 +1,17 @@
 [
+  {
+    "name": "shrimp",
+    "email": "awsedr3539@gmail.com",
+    "password": "scrypt:32768:8:1$xrmizJdIuZjlr4l5$533b61a75f963e4b7e629ede3ff66aa04f968a507f513c4aedbadbf388c6e4999b2719ef922f170b90a5caff18ddbc9e9f5063b4ef731f315517aca0d02810d4"
+  },
+  {
+    "name": "shrimp",
+    "email": "xiaxian731@gmail.com",
+    "password": "scrypt:32768:8:1$VZTw0zpQ0doDOXXZ$a145b595e65f2a8cd7c275be2c29ef85faf03ba744a704abefe0d5a8ea0e73cc76552efbd5a44ab774117719c44cdc840ed7ad8783ffcda3c5a98b365e88e2f0"
+  },
+  {
+    "name": "shrimpshrimp",
+    "email": "gyer8747@gmail.com",
+    "password": "scrypt:32768:8:1$GtWOztyXXkHvlg8b$01f0504855ab9927e3c2c3ae6ce16559d2db45dde19719ea58a8bd4c1e956440cdb583111e777f5b42515d51e7ae35600d0244104239f4e999e218789f470716"
+  }
 ]

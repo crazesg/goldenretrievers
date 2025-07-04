@@ -1,39 +1,214 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Data for New Section Products
+    // Data for New Section Products (12 items)
     const newSectionProducts = [
         {
-            name: '智慧語音助手',
-            shortDesc: '語音控制，智慧生活',
+            name: 'Pagani Huayra',
+            shortDesc: '項目:RGB',
             longDesc: '支援多語言語音指令，整合多種智慧家居設備，讓生活更便利。',
-            image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80'
+            image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 3,000',
+            brand: 'Pagani',
+            category: '汽車'
         },
         {
             name: '造型頭盔',
             shortDesc: '安全又時尚',
             longDesc: '高強度材質，結合潮流設計，保護你的同時展現個性。',
-            image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80'
+            image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,200',
+            brand: 'Doggy',
+            category: '配件'
         },
         {
             name: '多功能手環',
             shortDesc: '健康監測，訊息提醒',
             longDesc: '支援心率、步數、睡眠監測，來電與訊息提醒，生活好幫手。',
-            image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80'
+            image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,500',
+            brand: 'SmartDog',
+            category: '穿戴'
+        },
+        {
+            name: '智能餵食器',
+            shortDesc: '遠端控制，定時餵食',
+            longDesc: '可透過手機 App 遠端設定餵食時間與份量，支援語音提醒。',
+            image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,800',
+            brand: 'PetFeeder',
+            category: '家電'
+        },
+        {
+            name: '寵物智能項圈',
+            shortDesc: 'GPS 定位，健康監控',
+            longDesc: '即時追蹤寵物位置，記錄活動與健康數據，防走失必備。',
+            image: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,200',
+            brand: 'SafePet',
+            category: '穿戴'
+        },
+        {
+            name: '自動逗貓機',
+            shortDesc: '智能互動，遠端操控',
+            longDesc: '多種模式切換，讓寵物在家也能快樂玩耍，支援遠端遙控。',
+            image: 'https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,500',
+            brand: 'CatFun',
+            category: '玩具'
+        },
+        {
+            name: '智能飲水機',
+            shortDesc: '自動循環，過濾淨水',
+            longDesc: '多重過濾系統，保持水質新鮮，鼓勵寵物多喝水。',
+            image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 1,000',
+            brand: 'WaterPro',
+            category: '家電'
+        },
+        {
+            name: '寵物推車',
+            shortDesc: '輕巧折疊，外出方便',
+            longDesc: '高承重設計，適合各種體型寵物，外出旅遊好幫手。',
+            image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 3,600',
+            brand: 'GoPet',
+            category: '戶外'
+        },
+        {
+            name: '智能寵物門',
+            shortDesc: '自動感應，安全防護',
+            longDesc: '支援晶片辨識，寵物靠近自動開啟，防止陌生動物進入。',
+            image: 'https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,800',
+            brand: 'SmartHome',
+            category: '家電'
+        },
+        {
+            name: '寵物冷暖墊',
+            shortDesc: '四季適用，恆溫舒適',
+            longDesc: '自動調節溫度，讓寵物冬暖夏涼，安全省電。',
+            image: 'https://images.unsplash.com/photo-1518715308788-3005759c61d4?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,000',
+            brand: 'ComfyPet',
+            category: '家居'
+        },
+        {
+            name: '智能寵物攝影機',
+            shortDesc: '遠端監控，雙向語音',
+            longDesc: '1080P 高畫質，支援夜視與雙向語音，隨時掌握寵物動態。',
+            image: 'https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 2,900',
+            brand: 'PetCam',
+            category: '家電'
+        },
+        {
+            name: '寵物自動洗澡機',
+            shortDesc: '全自動洗淨，省時省力',
+            longDesc: '多段水溫調節，智能烘乾，讓洗澡變得輕鬆又安全。',
+            image: 'https://images.unsplash.com/photo-1518715308788-3005759c61d4?auto=format&fit=crop&w=600&q=80',
+            price: 'NT$ 5,500',
+            brand: 'CleanPet',
+            category: '家電'
         }
     ];
+
+    // 分頁功能
+    const pageSize = 9;
+    let currentPage = 1;
     const newSectionGrid = document.getElementById('newSectionGrid');
-    newSectionProducts.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.classList.add('grid-item');
-        productItem.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <div class="grid-item-content">
-                <h3>${product.name}</h3>
-                <p>${product.shortDesc}</p>
-                <a href="#" class="btn-small">了解更多</a>
-            </div>
-        `;
-        newSectionGrid.appendChild(productItem);
-    });
+    const paginationDiv = document.createElement('div');
+    paginationDiv.style = 'display:flex;justify-content:center;gap:1.2rem;margin:2.5rem 0;';
+    paginationDiv.id = 'paginationDiv';
+    newSectionGrid.after(paginationDiv);
+
+    function renderPage(page) {
+        newSectionGrid.innerHTML = '';
+        const start = (page - 1) * pageSize;
+        const end = start + pageSize;
+        const pageProducts = newSectionProducts.slice(start, end);
+        pageProducts.forEach((product, idx) => {
+            const productItem = document.createElement('div');
+            productItem.classList.add('grid-item');
+            productItem.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="grid-item-content">
+                    <h3>${product.name}</h3>
+                    <p>${product.shortDesc}</p>
+                    <a href="#" class="btn-small">了解更多</a>
+                </div>
+            `;
+            productItem.style.cursor = 'pointer';
+            productItem.addEventListener('click', (e) => {
+                if (e.target.tagName.toLowerCase() === 'a') return;
+                window.location.href = `product_detail.html?idx=${start + idx}`;
+            });
+            productItem.querySelector('.btn-small').addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = `product_detail.html?idx=${start + idx}`;
+            });
+            newSectionGrid.appendChild(productItem);
+        });
+        renderPagination(page);
+    }
+
+    function renderPagination(page) {
+        const totalPages = Math.ceil(newSectionProducts.length / pageSize);
+        paginationDiv.innerHTML = '';
+        if (totalPages <= 1) return;
+        const prevBtn = document.createElement('button');
+        prevBtn.textContent = '上一頁';
+        prevBtn.className = 'back-btn';
+        prevBtn.disabled = page === 1;
+        prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+        prevBtn.style.border = 'none';
+        prevBtn.style.boxShadow = '0 2px 8px rgba(32,31,45,0.08)';
+        prevBtn.style.margin = '0';
+        prevBtn.style.background = '#E6B16A';
+        prevBtn.style.color = '#fff';
+        prevBtn.style.padding = '0.8rem 2.2rem';
+        prevBtn.style.borderRadius = '0.7rem';
+        prevBtn.style.fontSize = '1.1rem';
+        prevBtn.style.fontWeight = '700';
+        prevBtn.style.transition = 'background 0.2s';
+        prevBtn.onmouseover = function(){ if(!prevBtn.disabled) prevBtn.style.background = '#3D2C1E'; };
+        prevBtn.onmouseout = function(){ prevBtn.style.background = '#E6B16A'; };
+        prevBtn.onclick = () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+            }
+        };
+        paginationDiv.appendChild(prevBtn);
+        const pageInfo = document.createElement('span');
+        pageInfo.style = 'margin:0 1.2rem;font-weight:700;color:#B79C85;';
+        pageInfo.textContent = `第 ${page} / ${totalPages} 頁`;
+        paginationDiv.appendChild(pageInfo);
+        const nextBtn = document.createElement('button');
+        nextBtn.textContent = '下一頁';
+        nextBtn.className = 'back-btn';
+        nextBtn.disabled = page === totalPages;
+        nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+        nextBtn.style.border = 'none';
+        nextBtn.style.boxShadow = '0 2px 8px rgba(32,31,45,0.08)';
+        nextBtn.style.margin = '0';
+        nextBtn.style.background = '#E6B16A';
+        nextBtn.style.color = '#fff';
+        nextBtn.style.padding = '0.8rem 2.2rem';
+        nextBtn.style.borderRadius = '0.7rem';
+        nextBtn.style.fontSize = '1.1rem';
+        nextBtn.style.fontWeight = '700';
+        nextBtn.style.transition = 'background 0.2s';
+        nextBtn.onmouseover = function(){ if(!nextBtn.disabled) nextBtn.style.background = '#3D2C1E'; };
+        nextBtn.onmouseout = function(){ nextBtn.style.background = '#E6B16A'; };
+        nextBtn.onclick = () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPage(currentPage);
+            }
+        };
+        paginationDiv.appendChild(nextBtn);
+    }
+
+    renderPage(currentPage);
 });
 
 // 註冊功能
