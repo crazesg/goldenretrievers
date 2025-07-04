@@ -1,0 +1,3 @@
+// ...existing code...
+// 已自動搬移與優化專案結構，請確認 assets/css、assets/js、assets/img 內容
+// 若有任何引用錯誤，請依 README_專案結構優化說明.txt 修正

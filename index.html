@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>金犬屋 | 模組專賣店</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo2.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo2.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="logo2.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo2.png">
+</head>
+<body>
+    <!-- Mouse Effect Canvas -->
+    <canvas id="mouse-effect-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#hero" class="logo" style="display: flex; align-items: center; gap: 0.7rem; text-decoration: none;">
+                <!-- 金犬屋商標圖片 -->
+                <img src="logo2.png" alt="金犬屋 Logo" class="logo-img" style="height: 48px; width: 48px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(32,31,45,0.08); background: #fff;" />
+                <span style="font-size: 1.45rem; font-weight: bold; color: #201f2d; letter-spacing: 0.12em; font-family: 'Noto Sans TC', 'Nunito Sans', sans-serif;">金犬屋</span>
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">首頁</a></li>
+                <li><a href="product2.html">產品</a></li>
+                <li><a href="#services">服務</a></li>
+                <li><a href="#about">關於我們</a></li>
+                <li><button class="auth-button" id="openAuthModal">登入 / 註冊</button></li>
+                <li id="userMenu" style="display:none"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section (主視覺區) -->
+    <section class="hero" id="hero">
+        <div class="hero-content" style="display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+            <img src="logo.png" alt="金犬屋品牌主視覺柴犬Logo" style="max-width: 180px; width: 100%; margin: 0; background: transparent; border-radius: 0; box-shadow: none;" />
+            <div style="min-width: 260px;">
+                <h1 style="font-size: 2.6rem; font-weight: 800; color: #3d2c1e; margin-bottom: 1.2rem;">專屬你的模組客製專門店</h1>
+                <p style="font-size: 1.25rem; color: #5a4633; margin-bottom: 2rem;">無論你是想打造獨一無二的車輛RGB、帥氣的武器，還是能發光的時裝、各式車輛功能，在 金犬屋 我們都能幫你實現！</p>
+                <a href="#contact" class="btn" style="font-size: 1.15rem; padding: 1.1rem 2.5rem;">探索更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Display Section (產品展示區) -->
+    <section class="section" id="products">
+        <div class="container">
+            <h2>金犬屋熱門項目</h2>
+            <p class="subtitle">獨家製作</p>
+            <div class="grid" id="productGrid">
+                <!-- Products will be dynamically loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Service Introduction Section (服務介紹區) -->
+    <section class="section section-alt" id="services">
+        <div class="container">
+            <h2>我們的專業服務</h2>
+            <p class="subtitle">我們不僅提供產品，更致力於提供讓您滿意的專業解決方案。</p>
+            <div class="grid" id="serviceGrid">
+                <!-- Services will be dynamically loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section (關於我們區) -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2>關於我們</h2>
+            <p class="subtitle">我們的熱情、理念與對您的承諾。</p>
+            <div class="about-us-content">
+                <div class="about-text">
+                    <h3>靜靜打磨，虛擬裡的真實質感</h3>
+                    <p>我們是一個專注於 FiveM 模組設計的團隊，提供車輛、武器、時裝與插件的客製與開發</p>
+                    <p>堅持細節、講究體驗，金犬屋堅持質量，絕不馬虎，認真對待每一位顧客。</p>
+                    <p></p>
+                </div>
+                <div class="about-image">
+                    <img src="https://storage.googleapis.com/dall-e-images/MjeXPfCgxCRLkHICVik8mw7RbMM2%2F6e83146a-8575-4d87-a9a6-12f13fd04975.png" alt="關於我們圖片">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section (聯絡我們區) -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <h2>聯絡我們</h2>
+            <p class="subtitle">我們樂意傾聽您的需求，歡迎隨時與我們聯繫。</p>
+            <form class="contact-form" id="contactForm">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" placeholder="請輸入您的姓名" required>
+
+                <label for="email">電子郵件</label>
+                <input type="email" id="email" name="email" placeholder="請輸入您的電子郵件" required>
+
+                <label for="subject">主旨</label>
+                <input type="text" id="subject" name="subject" placeholder="您想諮詢的主旨" required>
+
+                <label for="message">訊息</label>
+                <textarea id="message" name="message" placeholder="請輸入您的訊息" required></textarea>
+
+                <button type="submit">送出訊息</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>電子郵件:</strong> <a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></p>
+                <p><strong>營業時間:</strong> 週一至週五 09:30 - 17:30</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 金犬屋. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Discord</a> |
+                <a href="#">Instagram</a> |
+                <a href="#">LINE</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <div id="authMsg" class="auth-msg"></div>
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <h2>登入</h2>
+                <div class="form-group">
+                    <label for="login-email">電子郵件 / 用戶名</label>
+                    <input type="text" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密碼</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">登入</button>
+                <a href="#" class="toggle-form-link" data-form="register">還沒有帳號？註冊</a>
+            </form>
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form" style="display:none;">
+                <h2>註冊</h2>
+                <div class="form-group">
+                    <label for="register-username">用戶名</label>
+                    <input type="text" id="register-username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">電子郵件</label>
+                    <input type="email" id="register-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密碼</label>
+                    <input type="password" id="register-password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">確認密碼</label>
+                    <input type="password" id="register-confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">註冊</button>
+                <a href="#" class="toggle-form-link" data-form="login">已經有帳號？登入</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

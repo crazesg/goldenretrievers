@@ -1,0 +1,3 @@
+// ...existing code...
+// 請將 main.js、main2.js 移至 assets/js/ 並於 html 引用新路徑
+// modules/ 資料夾存放各頁功能模組
